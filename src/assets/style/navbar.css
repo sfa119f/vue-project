@@ -1,0 +1,149 @@
+header {
+    height: 4rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 6rem);
+    padding: 0.5rem 3rem;
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 3;
+    transition: 0.4s;
+}
+
+.navigation__brand {
+    display: flex;
+    flex: 1;
+    font-weight: bold;
+    min-width: 200px;
+}
+
+.navigation__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation__logo > img {
+    display: block;
+    height: 3rem;
+    padding: 0.25rem 0;
+    transition: 0.4s;
+}
+
+.navigation__brandname {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    color: black;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.navigation__hamburgermenu {
+    display: none;
+    text-align: right;
+    width: 2.25rem;
+    cursor: pointer;
+}
+
+.navigation__hamburgermenu>i {
+    font-size: 2rem;
+}
+
+.navigation__linkcontainer {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+    padding: -0.25rem;
+}
+
+.navigation__link {
+    margin: 0.25rem;
+    padding: 0.25rem;
+    color: black;
+    font-size: 1rem;
+    position: relative;
+    line-height: 1.5rem;
+}
+
+.navigation__link:hover {
+    cursor: pointer;
+}
+
+.navigation__link:hover > .navigation__linkhover::after {
+    width: 100%;
+}
+
+.navigation__linkhover {
+    color: black;
+    font-size: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navigation__linkhover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 999px;
+    background-color: #000;
+    transition: all;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 300ms;
+}
+
+.hamburgermenu__container {
+    position: fixed;
+    top: -2.5rem;
+    right: 0;
+}
+
+@media screen and (max-width: 267px) {
+    header {
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navigation {
+        flex-wrap: wrap;
+        width: calc(100% - 2rem);
+        padding: 0.5rem 1rem;
+    }
+
+    .navigation__hamburgermenu {
+        display: inline-block;
+    }
+
+    .hamburgermenu__container {
+        transition: 0.5s cubic-bezier(.46,.01,.52,.99);
+    }
+
+    .hamburgermenu {
+        opacity: 0;
+    }
+
+    .navigation__linkcontainer {
+        justify-content: flex-start;
+        flex-direction: column;
+        font-weight: bolder;
+        position: fixed;
+        top: 4.5rem;
+        right: 0;
+        height: calc(100vh - 4rem);
+        width: 200px;
+        background: rgb(222, 222, 222);
+        z-index: 4;
+        transition: 1s cubic-bezier(.46,.01,.52,.99);
+    }
+
+    .navigation__link:hover {
+        background: rgb(150, 150, 150);
+    }
+}

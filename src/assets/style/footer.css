@@ -1,0 +1,17 @@
+.footer__container {
+    height: 1.5rem;
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: center;
+    background: whitesmoke;
+}
+
+.footer__copyright {
+    text-align: center;
+}
+
+@media screen and (max-width: 800px){
+    .footer__container{
+        padding: 1rem .5rem;
+    }
+}
