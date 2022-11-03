@@ -1,4 +1,4 @@
-# fintax-interview
+# vue-project
 
 ## Project setup
 ```
